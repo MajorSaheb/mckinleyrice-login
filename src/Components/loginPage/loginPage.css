@@ -1,0 +1,22 @@
+.loginPage{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    background-color: ghostwhite;
+}
+.loginPage input{
+    border: 1px solid #bbbaba;
+    border-radius: 22px;
+    padding: 14px;
+    padding-left: 44px;
+}
+.loginPage input:focus {outline:0;}

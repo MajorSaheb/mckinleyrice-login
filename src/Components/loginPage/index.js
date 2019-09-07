@@ -1,23 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './loginPage.css';
 
-function LoginPage() {
+
+function LoginPage(props) {
+  const [name, setName] = useState('John Doe');
+  const [password, setPassword] = useState('123')
+  const handleNameInput = e => {
+    e.target.type==="text" ? setName(e.target.value) : setPassword(e.target.value);
+  };
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="loginPage">
+        <div className="content">
+          <label>Email: </label>
+          <input type='text' placeholder='Email' onChange={handleNameInput} value={name} required/>
+          <label>Password: </label>
+          <input type='password' placeholder='Password' onChange={handleNameInput} value={password} required/>
+          <button onClick={()=>props.post(name,password)}>Login</button>
+        </div>
       </div>
     );
   }
